@@ -158,7 +158,7 @@ export const myProfile: IUserDetails = {
   lastName: 'Decierdo',
   phone: '+64 204 0265304',
   title: 'Full Stack Developer',
-  photo: '/profile.jpg',
+  photo: '/portfolio/profile.jpg',
   awards,
   certificates: [],
   education,
