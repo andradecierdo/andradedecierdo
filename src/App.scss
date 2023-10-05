@@ -1,35 +1,241 @@
-$color-primary: #4ac4c4;
+$color-primary: #59faec;
+$color-secondary: #a1a1a1;
 
-.App {
+.portfolio-app {
   text-align: center;
+  font-size: 16px;
+  color: $color-primary;
+  height: 100vh;
+
+  hr {
+    color: $color-secondary;
+  }
 }
 
-.bg-dark {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.home {
+  .loading {
+    margin-top: 10px;
+    width: 100%;
+    height: 8px;
+    background-color: black;
+
+    .loading-bar {
+      height: 100%;
+      background-color: $color-primary;
+    }
+
+    .loading-label {
+      text-align: center;
+      font-size: 10px;
+      padding: 5px;
+    }
+  }
 }
 
-.font-color {
+.portfolio {
+  height: 100%;
+
+  .side-info {
+    cursor: default;
+    height: 100%;
+    background-color: rgb(59 67 69 / 38%);
+    max-width: 300px;
+    position: relative;
+
+    .top {
+      background-color: rgb(33 39 41 / 29%);
+      padding: 15px 0;
+    }
+
+    .avatar-container {
+      height: 100px;
+      width: 100%;
+
+      .thumbnail {
+        width: 100px;
+      }
+    }
+
+    .social {
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      bottom: 0;
+      left: 0;
+      height: 40px;
+      width: 100%;
+      background-color: #4f6f6b5c;
+
+      a {
+        text-decoration: none;
+        margin: 0 10px;
+        cursor: pointer;
+        color: inherit;
+      }
+    }
+
+    .contact {
+      color: $color-secondary;
+      text-align: left;
+      font-size: 14px;
+
+      div {
+        padding: 2px 10px;
+      }
+
+      i {
+        margin-right: 10px;
+        font-size: 16px;
+        color: $color-primary;
+      }
+    }
+
+    .skills {
+      margin-top: 10px;
+      font-size: 14px;
+      color: $color-secondary;
+
+      &-container {
+        padding: 5px 10px;
+      }
+
+      .label {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .percentage {
+        display: flex;
+        height: 5px;
+        background-color: black;
+
+        .line {
+          background-color: $color-primary;
+        }
+      }
+    }
+
+    .other-skills {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 10px;
+
+      .other-skill {
+        display: flex;
+        width: 50%;
+
+        i {
+          color: $color-primary;
+          margin: 5px 5px 0 0;
+        }
+      }
+    }
+
+    .education {
+      padding: 0 10px; // Common
+      font-size: 14px; // Common
+      text-align: left; // Common
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .awards {
+      padding: 0 10px; // Common
+      color: $color-secondary;
+      font-size: 14px; // Common
+      text-align: left; // Common
+
+      i {
+        margin-right: 10px;
+        font-size: 8px;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .main-info {
+    background-color: rgb(59 67 69 / 38%);
+  }
+}
+
+.bg {
+  &.dark {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.label {
+  &.main {
+    color: white;
+  }
+
+  &.sub {
+    font-size: 12px;
+    color: $color-secondary;
+  }
+}
+
+.color {
   &.primary {
     color: $color-primary;
+  }
+
+  &.secondary {
+    color: $color-secondary;
+  }
+}
+
+.avatar {
+  .img-container {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+
+    :hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.social-icon {
+  :hover {
+    opacity: 0.7;
+  }
+}
+
+.text-hover {
+  :hover {
+    opacity: 0.7;
   }
 }
 
 .profile-card {
- .container {
-   background-color: #fff;
-   color: rgba(0, 0, 0, 0.87);
-   border-radius: 50%;
-   overflow: hidden;
-   max-width: 200px;
-   max-height: 200px;
- }
+  .name {
+    font-size: 20px;
+  }
 }
 
-
+.scroll-component {
+  &.side {
+    overflow-y: scroll;
+    height: calc(100% - 290px);
+    margin-bottom: 10px;
+  }
+  // support safari and firefox
+  &::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+}

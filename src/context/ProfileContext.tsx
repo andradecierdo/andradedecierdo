@@ -1,5 +1,5 @@
-import React, { createContext, ReactNode, useContext } from 'react'
-import { IUser } from '../models'
+import React, { createContext, ReactNode, useContext, useState } from 'react'
+import { IUserDetails } from '../models'
 import { myProfile } from '../data/user'
 
 type ProfileProviderProps = {
@@ -7,7 +7,9 @@ type ProfileProviderProps = {
 }
 
 type ProfileContext = {
-  user: IUser
+  user: IUserDetails
+  loaded: boolean
+  setLoaded: (value: boolean) => void
 }
 
 const ProfileContext = createContext({} as ProfileContext)
@@ -17,10 +19,13 @@ export function useProfile() {
 }
 
 export function ProfileProvider({ children }: ProfileProviderProps) {
+  const [loaded, setLoaded] = useState(false)
   const user = myProfile
 
   const value: ProfileContext = {
-    user
+    user,
+    loaded,
+    setLoaded,
   }
 
   return (

@@ -13,5 +13,5 @@ export interface IEducation {
   address: string
   startDate: Date
   endDate?: Date
-  website?: string
+  website: string
 }

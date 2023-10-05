@@ -8,6 +8,7 @@ export enum SkillType {
 export interface ISkill {
   id: number
   name: string
+  level: number
   description?: string
   types: SkillType[]
 }

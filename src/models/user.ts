@@ -3,6 +3,7 @@ import { IAward } from './award'
 import { ICertificate } from './certificate'
 import { IReference } from './reference'
 import { IEducation } from './education'
+import {ISkill} from "./skill";
 
 export interface IUser {
   id: number
@@ -32,6 +33,8 @@ export interface IUserDetails extends IUser {
   awards: IAward[]
   certificates: ICertificate[]
   references: IReference[]
-  skills: IUserSkill[]
+  // skills: IUserSkill[]
+  mainSkills: ISkill[]
+  skills: ISkill[]
   education: IEducation[]
 }

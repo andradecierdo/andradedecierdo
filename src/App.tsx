@@ -1,15 +1,16 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import './App.scss'
 import { ProfileProvider } from './context/ProfileContext'
-import { Home } from './pages/Home'
+import { Home, Portfolio } from './pages'
+import './App.scss'
 
 function App() {
   return (
-    <div className="App bg-dark">
+    <div className="portfolio-app bg dark">
       <ProfileProvider>
         <Routes>
           <Route path='/' Component={Home} />
+          <Route path='/portfolio' Component={Portfolio} />
         </Routes>
       </ProfileProvider>
     </div>
