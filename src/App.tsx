@@ -9,12 +9,12 @@ function App() {
     <div className="portfolio-app bg dark">
       <div>
         <Link to="/"/>
-        <Link to="/portfolio"/>
+        <Link to="/profile"/>
       </div>
       <ProfileProvider>
         <Routes>
           <Route path='/' Component={Home} />
-          <Route path='/portfolio' Component={Portfolio} />
+          <Route path='/profile' Component={Portfolio} />
         </Routes>
       </ProfileProvider>
     </div>

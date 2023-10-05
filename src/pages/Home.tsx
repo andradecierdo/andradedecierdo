@@ -26,14 +26,14 @@ export function Home() {
   useEffect(() => {
     if (!loaded && percentage >= 100) {
       setLoaded(true)
-      navigate('/portfolio')
+      navigate('/profile')
     }
   }, [percentage, loaded])
 
 
   const handleProfileClick = (): void => {
     if (loaded) {
-      navigate('/portfolio')
+      navigate('/profile')
     }
   }
 
