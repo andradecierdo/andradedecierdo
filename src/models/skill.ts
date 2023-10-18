@@ -10,5 +10,5 @@ export interface ISkill {
   name: string
   level: number
   description?: string
-  types: SkillType[]
+  types?: SkillType[]
 }

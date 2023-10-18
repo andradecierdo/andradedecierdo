@@ -1,9 +1,4 @@
-import { IExperience } from './experience'
-import { IAward } from './award'
-import { ICertificate } from './certificate'
-import { IReference } from './reference'
-import { IEducation } from './education'
-import {ISkill} from "./skill";
+import { IAward, ICertificate, IEducation, IExperience, IReference, IResume, ISkill } from './'
 
 export interface IUser {
   id: number
@@ -17,7 +12,9 @@ export interface IUser {
   country: string
   overview: string
   photo: string // path to photo
-  resume?: string // path to resume
+  resume: IResume
+  bannerPhoto: string
+  bannerCover: string
 }
 
 export interface IUserSkill {

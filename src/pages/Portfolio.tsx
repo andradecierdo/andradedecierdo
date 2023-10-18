@@ -3,9 +3,10 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Avatar, SocialIcon } from '../components'
 import { useProfile } from '../context/ProfileContext'
 import { useNavigate } from 'react-router-dom'
+import { MainProfile } from './MainProfile'
 
 export function Portfolio() {
-  const { user, } = useProfile()
+  const { user } = useProfile()
   const navigate = useNavigate()
   const handleAvatarClick = (): void => {
     navigate('/')
@@ -103,15 +104,30 @@ export function Portfolio() {
           </div>
 
           <div className="social">
-            <SocialIcon
-              link="https://github.com/andradecierdo"
-              iconClass="fa fa-github" />
-            <SocialIcon
-              link="https://www.linkedin.com/in/andrade-chris-decierdo/"
-              iconClass="fa fa-linkedin-square" />
+            <button className="cv label sub">
+              <a
+                href={user.resume.path}
+                target="_blank"
+                download={user.resume.fileName}
+                rel="noreferrer">
+                <strong>
+                  Download CV <i className="fa fa-download"/>
+                </strong>
+              </a>
+            </button>
+            <div>
+              <SocialIcon
+                link="https://github.com/andradecierdo"
+                iconClass="fa fa-github" />
+              <SocialIcon
+                link="https://www.linkedin.com/in/andrade-chris-decierdo/"
+                iconClass="fa fa-linkedin-square" />
+            </div>
           </div>
         </Col>
-        <Col className="mx-4 main-info">Main</Col>
+        <Col className="mx-4 main-info">
+          <MainProfile />
+        </Col>
       </Row>
     </Container>
   )

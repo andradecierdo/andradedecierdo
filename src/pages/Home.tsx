@@ -38,7 +38,7 @@ export function Home() {
   }
 
   return (
-    <div className="p-5 home">
+    <div className="p-5">
       <Profile
         loaded={loaded}
         firstName={firstName}

@@ -12,23 +12,21 @@ $color-secondary: #a1a1a1;
   }
 }
 
-.home {
-  .loading {
-    margin-top: 10px;
-    width: 100%;
-    height: 8px;
-    background-color: black;
+.loading {
+  margin-top: 10px;
+  width: 100%;
+  height: 8px;
+  background-color: black;
 
-    .loading-bar {
-      height: 100%;
-      background-color: $color-primary;
-    }
+  .loading-bar {
+    height: 100%;
+    background-color: $color-primary;
+  }
 
-    .loading-label {
-      text-align: center;
-      font-size: 10px;
-      padding: 5px;
-    }
+  .loading-label {
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
   }
 }
 
@@ -57,21 +55,36 @@ $color-secondary: #a1a1a1;
     }
 
     .social {
+      display: flex;
+      justify-content: space-around;
       position: absolute;
-      justify-content: center;
       align-items: center;
       font-size: 25px;
       bottom: 0;
       left: 0;
       height: 40px;
       width: 100%;
-      background-color: #4f6f6b5c;
+      background-color: rgba(79, 111, 107, 0.36);
 
       a {
         text-decoration: none;
         margin: 0 10px;
         cursor: pointer;
         color: inherit;
+      }
+
+      .cv {
+        border: 0;
+        height: 30px;
+        background-color: transparent;
+
+        :hover {
+          color: $color-primary
+        }
+
+        i {
+          padding: 0 5px;
+        }
       }
     }
 
@@ -109,6 +122,10 @@ $color-secondary: #a1a1a1;
         display: flex;
         height: 5px;
         background-color: black;
+
+        :hover {
+          box-shadow: 0 3px 10px 2px $color-primary;
+        }
 
         .line {
           background-color: $color-primary;
@@ -210,12 +227,6 @@ $color-secondary: #a1a1a1;
   }
 }
 
-.social-icon {
-  :hover {
-    opacity: 0.7;
-  }
-}
-
 .text-hover {
   :hover {
     opacity: 0.7;
@@ -229,13 +240,73 @@ $color-secondary: #a1a1a1;
 }
 
 .scroll-component {
+  -ms-overflow-style: none; // IE
+  scrollbar-width: none; // firefox
+
+  &::-webkit-scrollbar {
+    display: none;  // Safari and Chrome
+  }
+
   &.side {
     overflow-y: scroll;
     height: calc(100% - 290px);
     margin-bottom: 10px;
   }
-  // support safari and firefox
-  &::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+}
+
+.profile-main {
+  height: 100%;
+
+  .banner-container {
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+
+    .photo {
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      img {
+        min-height: 100%;
+        width: 100%;
+        object-fit: cover;
+        max-height: 100%;
+        opacity: 0.3;
+      }
+    }
+
+    .info {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+
+      .name {
+        margin-top: 20px;
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      .position {
+        margin-top: -5px;
+        font-size: 15px;
+        color: white;
+        font-weight: 600;
+      }
+
+      .overview {
+        margin-top: 30px;
+        color: $color-secondary;
+        background-color: rgba(19, 19, 19, 61%);
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
   }
+
+  .experience-container {
+
+  }
+
 }

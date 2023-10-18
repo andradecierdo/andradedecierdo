@@ -60,31 +60,26 @@ const mainSkills: ISkill[] = [
     id: 1,
     name: 'React',
     level: 90,
-    types: [SkillType.frontend],
   },
   {
     id: 2,
     name: 'Angular',
     level: 90,
-    types: [SkillType.frontend],
   },
   {
     id: 4,
     name: 'Node',
     level: 90,
-    types: [SkillType.frontend],
   },
   {
     id: 5,
     name: 'Laravel',
     level: 90,
-    types: [SkillType.frontend],
   },
   {
     id: 6,
     name: 'GraphQL',
     level: 80,
-    types: [SkillType.frontend],
   },
   {
     id: 8,
@@ -102,7 +97,6 @@ const mainSkills: ISkill[] = [
     id: 11,
     name: 'Docker',
     level: 70,
-    types: [SkillType.frontend],
   },
 ]
 
@@ -159,6 +153,12 @@ export const myProfile: IUserDetails = {
   phone: '+64 204 0265304',
   title: 'Full Stack Developer',
   photo: '/portfolio/profile.jpg',
+  bannerPhoto: '/portfolio/banner-pic.png',
+  bannerCover: '/portfolio/banner-bg.jpg',
+  resume: {
+    path: '/portfolio/my-cv.pdf',
+    fileName: 'Andrade Chris Decierdo - CV',
+  },
   awards,
   certificates: [],
   education,
