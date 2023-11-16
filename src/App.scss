@@ -289,10 +289,13 @@ $color-secondary: #a1a1a1;
       }
 
       .position {
-        margin-top: -5px;
+        margin: 0 auto;
         font-size: 15px;
         color: white;
         font-weight: 600;
+        background: rgba(19, 19, 19, 61%);
+        padding: 0 10px;
+        width: fit-content;
       }
 
       .overview {
@@ -306,7 +309,265 @@ $color-secondary: #a1a1a1;
   }
 
   .experience-container {
-
+    padding: 10px 0;
   }
 
+}
+
+// Professional experience
+
+.professional-experience {
+  .projects-container {
+    padding: 5px 10px;
+    margin-left: 30px;
+  }
+}
+
+
+// Company
+.company-banner {
+  color: $color-secondary;
+  width: 100%;
+  margin: 15px 0;
+
+  .banner-container {
+    position: relative;
+    height: unset;
+
+    .header {
+      background-color: rgb(33 39 41 / 85%);
+      display: flex;
+      width: 100%;
+
+      .logo {
+        height: auto;
+        max-width: 50px;
+        max-height: 50px;
+        margin: -10px 10px 0 10px;
+
+        .img-container {
+          background-color: #fff;
+          color: rgba(0, 0, 0, 0.87);
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto;
+          min-width: 30px;
+          min-height: 30px;
+
+          img {
+            width: 100%;
+          }
+
+          :hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    .header-details {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+
+      .company {
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+
+        .name {
+          color: $color-primary;
+          font-size: 25px;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+
+          :hover {
+            opacity: 0.7;
+          }
+        }
+
+        .address {
+          color: white;
+          margin-left: 10px;
+          font-size: 12px;
+          font-style: italic;
+        }
+      }
+
+      .position {
+        text-align: right;
+        display: flex;
+        padding: 5px;
+        font-size: 14px;
+        align-items: baseline;
+      }
+
+      .title {
+        color: $color-primary;
+      }
+
+      .duration {
+        margin-left: 5px;
+        font-size: 12px;
+        font-style: italic;
+        color: white;
+      }
+    }
+  }
+
+  .company-details {
+    text-align: left;
+    font-size: 13px;
+    padding: 5px 20px 20px 20px;
+    background-color: rgb(33 39 41 / 29%);
+  }
+}
+
+// PROJECT
+.project-banner {
+  color: $color-secondary;
+  width: 100%;
+  margin: 15px 0;
+
+  .banner-container {
+    position: relative;
+    height: unset;
+
+    .header {
+      background-color: rgb(33 39 41 / 85%);
+      display: flex;
+      width: 100%;
+      padding: 2px 0;
+
+      .logo {
+        height: auto;
+        max-width: 35px;
+        max-height: 35px;
+        margin: 5px 10px;
+
+        .img-container {
+          background-color: #fff;
+          color: rgba(0, 0, 0, 0.87);
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto;
+          min-width: 20px;
+          min-height: 20px;
+
+          img {
+            width: 100%;
+          }
+
+          :hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    .header-details {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+
+      .company {
+        text-align: left;
+        align-items: baseline;
+
+        .name {
+          color: white;
+          font-size: 20px;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+
+          :hover {
+            opacity: 0.7;
+          }
+        }
+
+        .address {
+          color: $color-secondary;
+          margin-top: -5px;
+          font-size: 12px;
+          font-style: italic;
+        }
+      }
+
+      .skills-details {
+        text-align: right;
+        padding: 5px;
+        font-size: 12px;
+        align-items: baseline;
+      }
+
+      .skills {
+        font-size: 12px;
+        color: white;
+      }
+
+      .duration {
+        margin-left: 5px;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+  }
+
+  .project-details {
+    text-align: left;
+    font-size: 13px;
+    padding: 5px 20px 20px 20px;
+    background-color: rgb(33 39 41 / 29%);
+  }
+}
+
+.skill-list {
+  display: flex;
+  //background-color: rgb(33 39 41 / 29%); // TOOD common
+  margin-left: -10px;
+  margin-bottom: 5px;
+}
+
+.skill-item {
+  font-size: 12px;
+  float: left;
+  position: relative;
+  margin-right: 5px;
+  padding: 2px;
+  background-color: #13797d63;
+}
+
+.skill-item:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-width: 11px 0 11px 7px;
+  border-style: solid;
+  border-color: transparent transparent transparent #13797d63;
+}
+
+.skill-item + .skill-item {
+  margin-left: 0.75em;
+}
+
+//.skill-item + .skill-item:before {
+.skill-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  border-width: 11px 0 11px 7px;
+  border-style: solid;
+  border-color: #13797d63 #13797d63 #13797d63 transparent; // TODO color
 }

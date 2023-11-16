@@ -7,8 +7,10 @@ export interface IProject {
   description: string
   startDate: Date
   endDate: Date
-  positions: IPosition[]
+  position: IPosition
   skills: ISkill[]
   responsibilities: string[]
-  website?: string
+  website: string
+  logo: string
+  address: string
 }

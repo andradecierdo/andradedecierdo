@@ -3,6 +3,7 @@ export interface ICompany {
   name: string
   address: string
   details: string
+  logo: string
   website?: string
   email?: string
   phone?: string

@@ -5,10 +5,10 @@ import { IPosition } from './position'
 export interface IExperience {
   id: number
   userId: number
-  companyId: string
+  companyId: number
   company: ICompany
   projects: IProject[]
-  positions: IPosition[]
+  position: IPosition
   startDate: Date
   endDate?: Date
 }

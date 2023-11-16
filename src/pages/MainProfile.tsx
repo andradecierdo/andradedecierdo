@@ -1,5 +1,6 @@
 import React from 'react'
 import { useProfile } from '../context/ProfileContext'
+import { ProfessionalExperience } from '../components/experience/ProfessionalExperience'
 
 export function MainProfile() {
   const { user } = useProfile()
@@ -26,7 +27,15 @@ export function MainProfile() {
         </div>
       </div>
 
-      <div className="experience-container">...</div>
+      <div className="experience-container">
+        { user.experiences.map((experience, index) => {
+          return (
+            <div key={index}>
+              <ProfessionalExperience experience={experience} />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
