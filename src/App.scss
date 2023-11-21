@@ -1,4 +1,5 @@
 $color-primary: #59faec;
+$color-primary-sub: rgb(89 250 236 / 70%);
 $color-secondary: #a1a1a1;
 
 .portfolio-app {
@@ -176,6 +177,7 @@ $color-secondary: #a1a1a1;
   }
 
   .main-info {
+    height: 100%;
     background-color: rgb(59 67 69 / 38%);
   }
 }
@@ -242,15 +244,20 @@ $color-secondary: #a1a1a1;
 .scroll-component {
   -ms-overflow-style: none; // IE
   scrollbar-width: none; // firefox
+  overflow-y: scroll;
+  height: calc(100% - 290px);
+  margin-bottom: 10px;
 
   &::-webkit-scrollbar {
     display: none;  // Safari and Chrome
   }
 
   &.side {
-    overflow-y: scroll;
     height: calc(100% - 290px);
-    margin-bottom: 10px;
+  }
+
+  &.main {
+    height: calc(100% - 210px);
   }
 }
 
@@ -315,14 +322,14 @@ $color-secondary: #a1a1a1;
 }
 
 // Professional experience
-
 .professional-experience {
+  margin-bottom: 25px;
+
   .projects-container {
-    padding: 5px 10px;
+    padding: 5px 0;
     margin-left: 30px;
   }
 }
-
 
 // Company
 .company-banner {
@@ -437,6 +444,8 @@ $color-secondary: #a1a1a1;
   .banner-container {
     position: relative;
     height: unset;
+    padding-bottom: 15px;
+    border-bottom: dashed 1px;
 
     .header {
       background-color: rgb(33 39 41 / 85%);
@@ -531,20 +540,36 @@ $color-secondary: #a1a1a1;
   }
 }
 
+.responsibilities {
+  text-align: left;
+  font-size: 11px;
+  background: rgb(77 77 77 / 20%);
+  padding: 5px 0;
+
+  ul {
+    margin: 0;
+  }
+
+  li::marker {
+    color: $color-primary;
+  }
+}
+
 .skill-list {
   display: flex;
-  //background-color: rgb(33 39 41 / 29%); // TOOD common
   margin-left: -10px;
   margin-bottom: 5px;
 }
 
 .skill-item {
-  font-size: 12px;
+  font-size: 11px;
   float: left;
   position: relative;
   margin-right: 5px;
   padding: 2px;
   background-color: #13797d63;
+  height: 23px;
+  color: $color-primary-sub;
 }
 
 .skill-item:after {
@@ -554,7 +579,8 @@ $color-secondary: #a1a1a1;
   left: 100%;
   border-width: 11px 0 11px 7px;
   border-style: solid;
-  border-color: transparent transparent transparent #13797d63;
+  border-color: transparent transparent transparent #13797d63; // TODO common
+  height: 100%;
 }
 
 .skill-item + .skill-item {
@@ -570,4 +596,33 @@ $color-secondary: #a1a1a1;
   border-width: 11px 0 11px 7px;
   border-style: solid;
   border-color: #13797d63 #13797d63 #13797d63 transparent; // TODO color
+  height: 100%;
+}
+
+.project-label-container {
+  margin-left: 30px;
+  margin-bottom: -10px;
+}
+
+.ribbon-label {
+  width: 120px;
+  font-weight: 500;
+  font-size: 12px;
+  position: relative;
+  margin-right: 5px;
+  padding: 4px;
+  background-color: $color-primary-sub;
+  height: 24px;
+  color: black;
+}
+
+.ribbon-label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-width: 12px 0 12px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent $color-primary-sub;
+  height: 100%;
 }

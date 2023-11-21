@@ -6,12 +6,13 @@ interface IProjectBanner {
   details: string
   logo: string
   skills: string[]
+  responsibilities: string[]
   startDate: Date
   endDate?: Date
   website?: string
 }
 
-export function ProjectBanner({ name, address, details, logo, skills, startDate, endDate, website }: IProjectBanner) {
+export function ProjectBanner({ name, address, details, logo, skills, startDate, endDate, website, responsibilities }: IProjectBanner) {
   const getDateLabel = (d: Date): string => {
     return d.toLocaleString('default', { month: 'short', year: 'numeric' })
   }
@@ -52,6 +53,13 @@ export function ProjectBanner({ name, address, details, logo, skills, startDate,
             { skills.map((skill, index) => <div key={index} className="skill-item">{ skill }</div>)}
           </div>
           { details }
+        </div>
+        <div className="responsibilities">
+          <ul>
+            { responsibilities.map((responsibility, index) => (
+              <li key={index} className="item">{ responsibility }</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

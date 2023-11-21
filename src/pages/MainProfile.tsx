@@ -27,12 +27,10 @@ export function MainProfile() {
         </div>
       </div>
 
-      <div className="experience-container">
+      <div className="scroll-component main experience-container">
         { user.experiences.map((experience, index) => {
           return (
-            <div key={index}>
-              <ProfessionalExperience experience={experience} />
-            </div>
+            <ProfessionalExperience key={index} experience={experience} />
           )
         })}
       </div>

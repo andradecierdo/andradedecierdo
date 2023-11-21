@@ -7,11 +7,13 @@ interface ICompanyBanner {
   logo: string
   title: string
   startDate: Date
+  responsibilities?: string[]
+  skills?: string[]
   endDate?: Date
   website?: string
 }
 
-export function CompanyBanner({ name, address, details, logo, title, startDate, endDate, website }: ICompanyBanner) {
+export function CompanyBanner({ name, address, details, logo, title, startDate, endDate, website, skills, responsibilities }: ICompanyBanner) {
   // TODO common, add to utility
   const getDateLabel = (d: Date): string => {
     return d.toLocaleString('default', { month: 'short', year: 'numeric' })
@@ -49,8 +51,22 @@ export function CompanyBanner({ name, address, details, logo, title, startDate, 
           </div>
         </div>
         <div className="company-details">
+          { skills?.length &&
+            <div className="skill-list">
+              { skills.map((skill, index) => <div key={index} className="skill-item">{ skill }</div>)}
+            </div>
+          }
           { details }
         </div>
+        { responsibilities?.length &&
+          <div className="responsibilities">
+            <ul>
+              {responsibilities.map((responsibility, index) => (
+                <li key={index} className="item">{responsibility}</li>
+              ))}
+            </ul>
+          </div>
+        }
       </div>
     </div>
   )

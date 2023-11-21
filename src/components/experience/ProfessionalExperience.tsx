@@ -20,7 +20,18 @@ export function ProfessionalExperience({ experience }: IProfessionalExperience) 
         startDate={startDate}
         endDate={endDate}
         title={position.name}
+        skills={company.skills?.map(o => o.name)}
+        responsibilities={company.responsibilities}
         website={company.website} />
+
+      { !!projects?.length &&
+        <div className="project-label-container">
+          <div className="ribbon-label">
+            Projects / Clients
+          </div>
+        </div>
+      }
+      { !!projects?.length &&
         <div className="projects-container">
           { projects.map((project, index) => {
             const { name, address, description, skills, startDate, endDate, responsibilities, website, logo } = project
@@ -33,12 +44,14 @@ export function ProfessionalExperience({ experience }: IProfessionalExperience) 
                   logo={logo}
                   startDate={startDate}
                   endDate={endDate}
+                  responsibilities={responsibilities}
                   skills={skills.map(o => o.name)}
                   website={website} />
               </div>
             )
           })}
         </div>
+      }
     </div>
   )
 }
