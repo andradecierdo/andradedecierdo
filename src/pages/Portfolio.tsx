@@ -18,9 +18,9 @@ export function Portfolio() {
   }
 
   return (
-    <Container className="portfolio vh-100">
+    <Container className="portfolio">
       <Row className="h-100">
-        <Col className="mx-4 side-info">
+        <div className="side-info column">
           <div className="top">
             <div className="avatar-container">
               <div className="thumbnail m-auto">
@@ -124,10 +124,10 @@ export function Portfolio() {
                 iconClass="fa fa-linkedin-square" />
             </div>
           </div>
-        </Col>
-        <Col className="mx-4 main-info">
+        </div>
+        <div className="main-info column">
           <MainProfile />
-        </Col>
+        </div>
       </Row>
     </Container>
   )

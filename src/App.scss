@@ -1,3 +1,5 @@
+@import 'responsive.scss';
+
 $color-primary: #59faec;
 $color-primary-70: rgb(89 250 236 / 70%);
 $color-primary-50: rgb(89 250 236 / 50%);
@@ -9,9 +11,17 @@ $color-secondary: #a1a1a1;
   color: $color-primary;
   height: 100vh;
 
+  @include mobile {
+    height: 100%;
+  }
+
   hr {
     color: $color-secondary;
   }
+}
+
+.column {
+  flex: 1 0;
 }
 
 .loading {
@@ -41,6 +51,17 @@ $color-secondary: #a1a1a1;
     background-color: rgb(59 67 69 / 38%);
     max-width: 300px;
     position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    @include mobile-small {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
 
     .top {
       background-color: rgb(33 39 41 / 29%);
@@ -67,6 +88,10 @@ $color-secondary: #a1a1a1;
       height: 40px;
       width: 100%;
       background-color: rgba(79, 111, 107, 0.36);
+
+      @include mobile {
+        bottom: unset;
+      }
 
       a {
         text-decoration: none;
@@ -180,6 +205,17 @@ $color-secondary: #a1a1a1;
   .main-info {
     height: 100%;
     background-color: rgb(59 67 69 / 38%);
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @include mobile {
+      margin-top: 50px;
+    }
+
+    @include mobile-small {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 }
 
@@ -294,6 +330,10 @@ $color-secondary: #a1a1a1;
         margin-top: 20px;
         font-size: 25px;
         font-weight: 700;
+
+        @include mobile-small {
+          font-size: 20px;
+        }
       }
 
       .position {
@@ -304,20 +344,32 @@ $color-secondary: #a1a1a1;
         background: rgba(19, 19, 19, 61%);
         padding: 0 10px;
         width: fit-content;
+
+        @include mobile-small {
+          font-size: 12px;
+        }
       }
 
       .overview {
-        margin-top: 30px;
+        margin-top: 20px;
         color: $color-secondary;
         background-color: rgba(19, 19, 19, 61%);
         font-size: 14px;
         padding: 10px 20px;
+
+        @include mobile-small {
+          font-size: 12px;
+        }
       }
     }
   }
 
   .experience-container {
     padding: 10px 0 10px 50px;
+
+    @include mobile-small {
+      padding-left: 20px;
+    }
   }
 
 }
@@ -382,14 +434,26 @@ $color-secondary: #a1a1a1;
       width: 100%;
       padding: 0 10px;
 
+      @include mobile-small {
+        padding: 0;
+      }
+
       .company {
         text-align: left;
         display: flex;
         align-items: baseline;
 
+        @include mobile-small {
+          display: block;
+        }
+
         .name {
           color: $color-primary;
           font-size: 25px;
+
+          @include mobile-small {
+            font-size: 20px;
+          }
 
           a {
             text-decoration: none;
@@ -406,6 +470,11 @@ $color-secondary: #a1a1a1;
           margin-left: 10px;
           font-size: 12px;
           font-style: italic;
+
+          @include mobile-small {
+            margin-left: 0;
+            font-size: 11px;
+          }
         }
       }
 
@@ -415,6 +484,11 @@ $color-secondary: #a1a1a1;
         padding: 5px;
         font-size: 14px;
         align-items: baseline;
+
+        @include mobile-small {
+          font-size: 12px;
+          display: block;
+        }
       }
 
       .title {
@@ -426,6 +500,10 @@ $color-secondary: #a1a1a1;
         font-size: 12px;
         font-style: italic;
         color: white;
+
+        @include mobile-small {
+          font-size: 11px;
+        }
       }
     }
   }
@@ -497,6 +575,10 @@ $color-secondary: #a1a1a1;
           color: white;
           font-size: 20px;
 
+          @include mobile-small {
+            font-size: 16px;
+          }
+
           a {
             text-decoration: none;
             color: inherit;
@@ -531,6 +613,10 @@ $color-secondary: #a1a1a1;
         margin-left: 5px;
         font-size: 12px;
         font-style: italic;
+
+        @include mobile-small {
+          font-size: 11px;
+        }
       }
     }
   }
@@ -562,13 +648,14 @@ $color-secondary: #a1a1a1;
   display: flex;
   margin-left: -10px;
   margin-bottom: 5px;
+  flex-wrap: wrap;
 }
 
 .skill-item {
   font-size: 11px;
   float: left;
   position: relative;
-  margin-right: 5px;
+  margin: 2px 5px;
   padding: 2px;
   background-color: #13797d63;
   height: 23px;
@@ -590,7 +677,6 @@ $color-secondary: #a1a1a1;
   margin-left: 0.75em;
 }
 
-//.skill-item + .skill-item:before {
 .skill-item:before {
   content: "";
   position: absolute;
@@ -643,6 +729,10 @@ $color-secondary: #a1a1a1;
 
   .item::after {
     left: -32px;
+
+    @include mobile-small {
+      left: -20px;
+    }
   }
 }
 
@@ -655,6 +745,10 @@ $color-secondary: #a1a1a1;
   bottom: 0;
   left: 0;
   margin-left: -25px;
+
+  @include mobile-small {
+    margin-left: -12px;
+  }
 }
 
 .timeline-container {
