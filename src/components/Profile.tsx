@@ -17,10 +17,10 @@ export function Profile({ photo, lastName, firstName, title, loaded, onProfileCl
       { loaded &&
         <div className="mt-2">
           <div className="name color primary">
-            {firstName} {lastName}
+            { firstName } { lastName }
           </div>
           <div className="color secondary">
-            {title}
+            { title }
           </div>
         </div>
       }

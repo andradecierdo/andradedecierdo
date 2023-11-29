@@ -77,44 +77,6 @@ $color-secondary: #a1a1a1;
       }
     }
 
-    .social {
-      display: flex;
-      justify-content: space-around;
-      position: absolute;
-      align-items: center;
-      font-size: 25px;
-      bottom: 0;
-      left: 0;
-      height: 40px;
-      width: 100%;
-      background-color: rgba(79, 111, 107, 0.36);
-
-      @include mobile {
-        bottom: unset;
-      }
-
-      a {
-        text-decoration: none;
-        margin: 0 10px;
-        cursor: pointer;
-        color: inherit;
-      }
-
-      .cv {
-        border: 0;
-        height: 30px;
-        background-color: transparent;
-
-        :hover {
-          color: $color-primary
-        }
-
-        i {
-          padding: 0 5px;
-        }
-      }
-    }
-
     .contact {
       color: $color-secondary;
       text-align: left;
@@ -131,61 +93,17 @@ $color-secondary: #a1a1a1;
       }
     }
 
-    .skills {
-      margin-top: 10px;
-      font-size: 14px;
-      color: $color-secondary;
-
-      &-container {
-        padding: 5px 10px;
-      }
-
-      .label {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .percentage {
-        display: flex;
-        height: 5px;
-        background-color: black;
-
-        :hover {
-          box-shadow: 0 3px 10px 2px $color-primary;
-        }
-
-        .line {
-          background-color: $color-primary;
-        }
-      }
-    }
-
     .other-skills {
       display: flex;
       width: 100%;
       flex-wrap: wrap;
       padding: 10px;
-
-      .other-skill {
-        display: flex;
-        width: 50%;
-
-        i {
-          color: $color-primary;
-          margin: 5px 5px 0 0;
-        }
-      }
     }
 
-    .education {
+    .education-container {
       padding: 0 10px; // Common
       font-size: 14px; // Common
       text-align: left; // Common
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
     }
 
     .awards {
@@ -215,6 +133,90 @@ $color-secondary: #a1a1a1;
     @include mobile-small {
       margin-left: 5px;
       margin-right: 5px;
+    }
+  }
+}
+
+.education {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.skills-container {
+  margin-top: 10px;
+  font-size: 14px;
+  color: $color-secondary;
+}
+
+.skills {
+  padding: 5px 10px;
+
+  .label {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .percentage {
+    display: flex;
+    height: 5px;
+    background-color: black;
+
+    :hover {
+      box-shadow: 0 3px 10px 2px $color-primary;
+    }
+
+    .line {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.other-skill {
+  display: flex;
+  width: 50%;
+
+  i {
+    color: $color-primary;
+    margin: 5px 5px 0 0;
+  }
+}
+
+.profile-footer {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  align-items: center;
+  font-size: 25px;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background-color: rgba(79, 111, 107, 0.36);
+
+  @include mobile {
+    bottom: unset;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0 10px;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  .cv {
+    border: 0;
+    height: 30px;
+    background-color: transparent;
+
+    :hover {
+      color: $color-primary
+    }
+
+    i {
+      padding: 0 5px;
     }
   }
 }
@@ -300,70 +302,6 @@ $color-secondary: #a1a1a1;
 
 .profile-main {
   height: 100%;
-
-  .banner-container {
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-
-    .photo {
-      height: 100%;
-      width: 100%;
-      position: relative;
-
-      img {
-        min-height: 100%;
-        width: 100%;
-        object-fit: cover;
-        max-height: 100%;
-        opacity: 0.3;
-      }
-    }
-
-    .info {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-
-      .name {
-        margin-top: 20px;
-        font-size: 25px;
-        font-weight: 700;
-
-        @include mobile-small {
-          font-size: 20px;
-        }
-      }
-
-      .position {
-        margin: 0 auto;
-        font-size: 15px;
-        color: white;
-        font-weight: 600;
-        background: rgba(19, 19, 19, 61%);
-        padding: 0 10px;
-        width: fit-content;
-
-        @include mobile-small {
-          font-size: 12px;
-        }
-      }
-
-      .overview {
-        margin-top: 20px;
-        color: $color-secondary;
-        background-color: rgba(19, 19, 19, 61%);
-        font-size: 14px;
-        padding: 10px 20px;
-
-        @include mobile-small {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-
   .experience-container {
     padding: 10px 0 10px 50px;
 
@@ -371,7 +309,69 @@ $color-secondary: #a1a1a1;
       padding-left: 20px;
     }
   }
+}
 
+.profile-banner-container {
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+
+  .photo {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    img {
+      min-height: 100%;
+      width: 100%;
+      object-fit: cover;
+      max-height: 100%;
+      opacity: 0.3;
+    }
+  }
+
+  .info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    .name {
+      margin-top: 20px;
+      font-size: 25px;
+      font-weight: 700;
+
+      @include mobile-small {
+        font-size: 20px;
+      }
+    }
+
+    .position {
+      margin: 0 auto;
+      font-size: 15px;
+      color: white;
+      font-weight: 600;
+      background: rgba(19, 19, 19, 61%);
+      padding: 0 10px;
+      width: fit-content;
+
+      @include mobile-small {
+        font-size: 12px;
+      }
+    }
+
+    .overview {
+      margin-top: 20px;
+      color: $color-secondary;
+      background-color: rgba(19, 19, 19, 61%);
+      font-size: 14px;
+      padding: 10px 20px;
+
+      @include mobile-small {
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 // Professional experience

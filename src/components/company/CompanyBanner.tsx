@@ -1,4 +1,5 @@
 import React from 'react'
+import { getDurationLabel } from '../../utils/DateLabel'
 
 interface ICompanyBanner {
   name: string
@@ -14,16 +15,6 @@ interface ICompanyBanner {
 }
 
 export function CompanyBanner({ name, address, details, logo, title, startDate, endDate, website, skills, responsibilities }: ICompanyBanner) {
-  // TODO common, add to utility
-  const getDateLabel = (d: Date): string => {
-    return d.toLocaleString('default', { month: 'short', year: 'numeric' })
-  }
-
-  const getDurationLabel = (starDate: Date, endDate?: Date): string => {
-    const endYear = endDate ? getDateLabel(endDate) : 'Current'
-    return `(${getDateLabel(starDate)} - ${endYear})`
-  }
-
   return (
     <div className="company-banner">
       <div className="banner-container">

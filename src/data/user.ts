@@ -6,7 +6,7 @@ import {
   IExperience,
   IPosition,
   IProject,
-  ISkill,
+  ISkill, ISocialMedia,
   IUser,
   IUserDetails,
   SkillType
@@ -547,6 +547,19 @@ const experiences: IExperience[] = [
   },
 ]
 
+const socialMedia: ISocialMedia[] = [
+  {
+    name: 'Github',
+    link: 'https://github.com/andradecierdo',
+    iconClass: 'fa fa-github',
+  },
+  {
+    name: 'Linkedin',
+    link: 'https://www.linkedin.com/in/andrade-chris-decierdo/',
+    iconClass: 'fa fa-linkedin-square',
+  }
+]
+
 // TODO add social media
 export const myProfile: IUserDetails = {
   id: 1,
@@ -572,6 +585,7 @@ export const myProfile: IUserDetails = {
   references: [],
   mainSkills,
   skills,
+  socialMedia,
   overview: 'A full stack engineer with over 7 years of experience with ' +
     'a strong focus on web development in the Software as a ' +
     'Service (SaaS) industry. Has successfully delivered ' +

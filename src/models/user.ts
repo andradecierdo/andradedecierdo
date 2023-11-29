@@ -25,6 +25,12 @@ export interface IUserSkill {
   endDate?: Date
 }
 
+export interface ISocialMedia {
+  name: string
+  link: string
+  iconClass: string
+}
+
 export interface IUserDetails extends IUser {
   experiences: IExperience[]
   awards: IAward[]
@@ -34,4 +40,5 @@ export interface IUserDetails extends IUser {
   mainSkills: ISkill[]
   skills: ISkill[]
   education: IEducation[]
+  socialMedia: ISocialMedia[]
 }

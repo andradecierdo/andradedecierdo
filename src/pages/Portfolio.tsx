@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import { Avatar, SocialIcon } from '../components'
+import { Container, Row } from 'react-bootstrap'
+import { Avatar, Education, OtherSkill, ProfileFooter, Skill } from '../components'
 import { useProfile } from '../context/ProfileContext'
 import { useNavigate } from 'react-router-dom'
 import { MainProfile } from './MainProfile'
@@ -10,11 +10,6 @@ export function Portfolio() {
   const navigate = useNavigate()
   const handleAvatarClick = (): void => {
     navigate('/')
-  }
-
-  const getSchoolYearLabel = (starDate: Date, endDate?: Date): string => {
-    const endYear = endDate?.getFullYear() || 'Current'
-    return `(${starDate.getFullYear()} - ${endYear})`
   }
 
   return (
@@ -28,7 +23,6 @@ export function Portfolio() {
               </div>
             </div>
             <hr/>
-
             <div className="contact">
               <div>
                 <i className="fa fa-phone" />
@@ -45,48 +39,28 @@ export function Portfolio() {
             </div>
           </div>
           <div className="scroll-component side">
-            <div className="skills">
+            <div className="skills-container">
               { user.mainSkills.map((skill, index) => {
-                return (
-                  <div key={index} className="skills-container">
-                    <div className="label">
-                      <div className="name">{ skill.name}</div>
-                      {/*<div className="percentage-label">{ skill.level }%</div>*/}
-                    </div>
-                    <div className="percentage">
-                      <div className="line" style={{width: `${skill.level}%` }}/>
-                    </div>
-                  </div>
-                )
+                return <Skill key={index} name={skill.name} level={skill.level} />
               })}
               <div className="other-skills">
                 { user.skills.map((skill, index) => {
-                  return (
-                    <div key={index} className="other-skill">
-                      <i className="fa fa-check"/>
-                      { skill.name }
-                    </div>
-                  )
+                  return <OtherSkill key={index} name={skill.name} />
                 })}
               </div>
             </div>
             <hr/>
-            <div className="education">
+            <div className="education-container">
               { user.education.map((education, index) => {
                 return (
-                  <div key={index}>
-                    <div className="">
-                      { education.degree}
-                    </div>
-                    <div className="label sub text-hover">
-                      <a href={education.website} target="_blank">
-                        { education.school } { getSchoolYearLabel(education.startDate, education.endDate) }
-                      </a>
-                    </div>
-                    <div className="label sub">
-                      { education.address }
-                    </div>
-                  </div>
+                  <Education
+                    key={index}
+                    startDate={education.startDate}
+                    website={education.website}
+                    address={education.address}
+                    degree={education.degree}
+                    school={education.school}
+                    endDate={education.endDate}/>
                 )
               })}
             </div>
@@ -103,27 +77,10 @@ export function Portfolio() {
             </div>
           </div>
 
-          <div className="social">
-            <button className="cv label sub">
-              <a
-                href={user.resume.path}
-                target="_blank"
-                download={user.resume.fileName}
-                rel="noreferrer">
-                <strong>
-                  Download CV <i className="fa fa-download"/>
-                </strong>
-              </a>
-            </button>
-            <div>
-              <SocialIcon
-                link="https://github.com/andradecierdo"
-                iconClass="fa fa-github" />
-              <SocialIcon
-                link="https://www.linkedin.com/in/andrade-chris-decierdo/"
-                iconClass="fa fa-linkedin-square" />
-            </div>
-          </div>
+          <ProfileFooter
+            cvFilePath={user.resume.path}
+            cvFileName={user.resume.fileName}
+            socialMedia={user.socialMedia} />
         </div>
         <div className="main-info column">
           <MainProfile />

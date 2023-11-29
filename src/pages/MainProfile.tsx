@@ -1,35 +1,23 @@
 import React from 'react'
 import { useProfile } from '../context/ProfileContext'
 import { ProfessionalExperience } from '../components/experience/ProfessionalExperience'
+import { ProfileBanner } from '../components'
 
 export function MainProfile() {
-  const { user } = useProfile()
+  const { user: { bannerCover, title, firstName, lastName, overview, experiences } } = useProfile()
 
   return (
     <div className="profile-main">
-      <div className="banner-container">
-        <div className="photo" >
-          <img
-            src={user.bannerCover}
-            alt="Profile Picture"
-          />
-          <div className="info">
-            <div className="name">
-              { user.firstName } { user.lastName }
-            </div>
-            <div className="position">
-              { user.title }
-            </div>
-            <div className="overview">
-              { user.overview }
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProfileBanner
+        coverPhoto={bannerCover}
+        name={`${firstName} ${lastName}`}
+        title={title}
+        overview={overview}
+      />
 
       <div className="scroll-component main experience-container">
         <div className="timeline">
-          { user.experiences.map((experience, index) => {
+          { experiences.map((experience, index) => {
             return (
               <div key={index} className="timeline-container item">
                 <ProfessionalExperience  experience={experience} />
