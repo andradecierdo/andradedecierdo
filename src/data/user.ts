@@ -4,17 +4,16 @@ import {
   ICompany,
   IEducation,
   IExperience,
-  IPosition,
   IProject,
-  ISkill, ISocialMedia,
-  IUser,
+  ISkill,
+  ISocialMedia,
   IUserDetails,
-  SkillType
 } from '../models'
 
 const awards: IAward[] = [
   {
     id: 1,
+    userId: 1,
     title: 'Kudos Awardee',
     description: '',
     address: '',
@@ -22,6 +21,7 @@ const awards: IAward[] = [
   },
   {
     id: 2,
+    userId: 1,
     title: 'ITO Client Service Delivery',
     description: '',
     address: '',
@@ -29,24 +29,28 @@ const awards: IAward[] = [
   },
   {
     id: 3,
+    userId: 1,
     title: 'Client Satisfaction Award',
     description: '',
     address: '',
   },
   {
     id: 4,
+    userId: 1,
     title: 'Sustainability Award',
     description: '',
     address: '',
   },
   {
     id: 5,
+    userId: 1,
     title: 'Project Manager Recognition',
     description: '',
     address: '',
   },
   {
     id: 6,
+    userId: 1,
     title: 'Top 10 Peer-to-Peer Awardee',
     description: '',
     address: '',
@@ -56,7 +60,7 @@ const awards: IAward[] = [
 const education: IEducation[] = [
   {
     id: 1,
-    // userId: number
+    userId: 1,
     degree: 'BS in Information Technology',
     school: 'Silliman University',
     level: EducationLevel.tertiary,
@@ -110,7 +114,6 @@ const mainSkills: ISkill[] = [
   },
 ]
 
-// TODO change id and types accordingly
 const skills: ISkill[] = [
   {
     id: 3,
@@ -147,6 +150,7 @@ const skills: ISkill[] = [
 
 const sprobeCompany: ICompany = {
   id: 1,
+  userId: 1,
   name: 'Sprobe',
   address: 'Cebu, Philippines',
   logo: '/portfolio/company/sprobe-logo.jpg', // logo path
@@ -161,6 +165,7 @@ const sprobeProjects: IProject[] = [
   // CM Studio
   {
     id: 3,
+    companyId: 1,
     name: 'CM Studio',
     description: 'A cloud video generation service that allows you to create and edit videos used for advertisements',
     startDate: new Date(2018, 8, 18), // TODO dates
@@ -210,7 +215,7 @@ const sprobeProjects: IProject[] = [
     responsibilities: [
       'Created a user-friendly assistant feature that helps you choose a video template based on purpose and information you provide',
       'Refactored database tables to have better structure and optimized association',
-      'Implemented the core feature of the application that allows you to create and edit a video by adding texts, video clip, photos and background music',
+      'Implemented core features of the application that allow you to create and edit a video by adding texts, video clip, photos and background music',
       'Developed a custom resizable and draggable video clip trimmer that enables users to select the desired timeframe to be added to the final video',
       'Introduced process improvements, design patterns, and coding standards to have more organized, clean and maintainable codes',
       'Led the team and mentored junior engineers to enhance their skills by coaching and guiding them in their tasks',
@@ -222,6 +227,7 @@ const sprobeProjects: IProject[] = [
   // Phrontier
   {
     id: 3,
+    companyId: 1,
     name: 'Phrontier',
     description: 'An internal system dedicated to sales team to have a simpler view and easier project management which is integrated to Phabricator that allows the system to utilize its APIs',
     startDate: new Date(2018, 4, 18), // TODO dates
@@ -269,7 +275,7 @@ const sprobeProjects: IProject[] = [
       },
     ],
     responsibilities: [
-      'Implemented the core function that sends requests to the API and processes the response in a simpler and user-friendly view for non-tech users',
+      'Implemented the core functions that send requests to the API and processes the response in a simpler and user-friendly view for non-tech users',
       'Ensured quality output by thoroughly reviewing codes and testing functionalities',
       'Setup and modified the API to meet the desired behavior and requirements for the frontend',
       'Built client-side modules with mobile responsiveness',
@@ -283,6 +289,7 @@ const sprobeProjects: IProject[] = [
   // Automatching
   {
     id: 3,
+    companyId: 1,
     name: 'BizMatch',
     description: 'A business automatching system dedicated for Japanese companies. Automatches companies based on their interests and needs',
     startDate: new Date(2016, 3, 1), // TODO dates
@@ -336,11 +343,11 @@ const sprobeProjects: IProject[] = [
   },
 ]
 
-// TODO
 const codevProjects: IProject[] = [
   // TRACTION
   {
     id: 1,
+    companyId: 2,
     name: 'Traction Ag',
     description: 'A farm management solution software built for the cloud.\n' +
       'Integrates actual accounting numbers with field operations,\n' +
@@ -404,6 +411,7 @@ const codevProjects: IProject[] = [
   // ADALLY
   {
     id: 1,
+    companyId: 2,
     name: 'Adally',
     description: 'A tool for scanning website’s compliance to ADA (Americans with Disabilities Act) based on WCAG (Web Content Accessibility Guidelines). Scans the website’s pages and returns a list of accessibility issues with solution reference',
     startDate: new Date(2020, 6, 18),
@@ -463,6 +471,7 @@ const codevProjects: IProject[] = [
 
 const codevCompany: ICompany = {
   id: 2,
+  userId: 1,
   name: 'CoDev',
   address: 'Cebu, Philippines',
   logo: '/portfolio/company/codev-logo.jpg', // logo path
@@ -474,6 +483,7 @@ const codevCompany: ICompany = {
 
 const snowballEffectCompany: ICompany = {
   id: 3,
+  userId: 1,
   name: 'Snowballeffect',
   address: 'Auckland, New Zealand',
   logo: '/portfolio/company/snowballeffect-logo.jpg', // logo path
@@ -560,7 +570,6 @@ const socialMedia: ISocialMedia[] = [
   }
 ]
 
-// TODO add social media
 export const myProfile: IUserDetails = {
   id: 1,
   address: '3 Hornsey Avenue, Henderson',

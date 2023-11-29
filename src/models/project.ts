@@ -3,6 +3,7 @@ import { ISkill } from './skill'
 
 export interface IProject {
   id: number
+  companyId: number
   name: string
   description: string
   startDate: Date

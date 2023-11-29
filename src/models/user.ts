@@ -19,7 +19,7 @@ export interface IUser {
 
 export interface IUserSkill {
   id: number
-  // userId: number
+  userId: number
   skillId: number
   startDate: Date
   endDate?: Date
@@ -36,7 +36,6 @@ export interface IUserDetails extends IUser {
   awards: IAward[]
   certificates: ICertificate[]
   references: IReference[]
-  // skills: IUserSkill[]
   mainSkills: ISkill[]
   skills: ISkill[]
   education: IEducation[]

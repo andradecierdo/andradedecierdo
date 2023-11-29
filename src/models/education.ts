@@ -6,7 +6,7 @@ export enum EducationLevel {
 
 export interface IEducation {
   id: number
-  // userId: number
+  userId: number
   degree: string
   school: string
   level: EducationLevel

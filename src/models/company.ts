@@ -2,6 +2,7 @@ import { ISkill } from './skill'
 
 export interface ICompany {
   id: number
+  userId: number
   name: string
   address: string
   details: string
