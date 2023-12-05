@@ -42,17 +42,17 @@ export function CompanyBanner({ name, address, details, logo, title, startDate, 
           </div>
         </div>
         <div className="company-details">
-          { skills?.length &&
+          { !!skills?.length &&
             <div className="skill-list">
               { skills.map((skill, index) => <div key={index} className="skill-item">{ skill }</div>)}
             </div>
           }
           { details }
         </div>
-        { responsibilities?.length &&
+        { !!responsibilities?.length &&
           <div className="responsibilities">
             <ul>
-              {responsibilities.map((responsibility, index) => (
+              { responsibilities.map((responsibility, index) => (
                 <li key={index} className="item">{responsibility}</li>
               ))}
             </ul>
