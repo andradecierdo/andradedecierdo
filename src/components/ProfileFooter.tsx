@@ -1,5 +1,5 @@
 import React from 'react'
-import { SocialIcon } from './SocialIcon'
+import { SocialMediaIcon } from './SocialMediaIcon'
 
 interface IProfileFooterSocialMedia {
   link: string
@@ -28,7 +28,7 @@ export function ProfileFooter({ cvFileName, cvFilePath, socialMedia }: IProfileF
       </button>
       <div>
         { socialMedia.map(({ link, iconClass }, index) => {
-          return <SocialIcon key={index} link={link} iconClass={iconClass} />
+          return <SocialMediaIcon key={index} link={link} iconClass={iconClass} />
         })}
       </div>
     </div>

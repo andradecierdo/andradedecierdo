@@ -4,7 +4,16 @@ import { ProfessionalExperience } from '../components/experience/ProfessionalExp
 import { ProfileBanner } from '../components'
 
 export function MainProfile() {
-  const { user: { bannerCover, title, firstName, lastName, overview, experiences } } = useProfile()
+  const {
+    user: {
+      bannerCover,
+      title,
+      firstName,
+      lastName,
+      overview,
+      experiences,
+    }
+  } = useProfile()
 
   return (
     <div className="profile-main">
@@ -14,13 +23,12 @@ export function MainProfile() {
         title={title}
         overview={overview}
       />
-
       <div className="scroll-component main experience-container">
         <div className="timeline">
           { experiences.map((experience, index) => {
             return (
               <div key={index} className="timeline-container item">
-                <ProfessionalExperience  experience={experience} />
+                <ProfessionalExperience experience={experience} />
               </div>
             )
           })}

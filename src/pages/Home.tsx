@@ -5,7 +5,12 @@ import { Loading, Profile } from '../components'
 
 export function Home() {
   const {
-    user: { firstName, lastName, photo, title },
+    user: {
+      firstName,
+      lastName,
+      photo,
+      title,
+    },
     loaded,
     setLoaded,
   } = useProfile()
@@ -18,7 +23,7 @@ export function Home() {
     }
   }
 
-  const loadingCompleted = (): void => {
+  const handleLoadingComplete = (): void => {
     setLoaded(true)
   }
 
@@ -35,7 +40,7 @@ export function Home() {
       { !loaded &&
       <Loading
         increment={4}
-        completed={loadingCompleted}
+        completed={handleLoadingComplete}
         label={'loading...'}
         redirection={'/profile'} /> }
     </div>

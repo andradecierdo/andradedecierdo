@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
-import { Avatar, Education, OtherSkill, ProfileFooter, Skill } from '../components'
+import { Avatar, Award, Education, OtherSkill, ProfileFooter, Skill } from '../components'
 import { useProfile } from '../context/ProfileContext'
 import { useNavigate } from 'react-router-dom'
 import { MainProfile } from './MainProfile'
@@ -60,27 +60,23 @@ export function Portfolio() {
                     address={education.address}
                     degree={education.degree}
                     school={education.school}
-                    endDate={education.endDate}/>
+                    endDate={education.endDate}
+                  />
                 )
               })}
             </div>
             <hr/>
-            <div className="awards ">
+            <div className="awards">
               { user.awards.map((award, index) => {
-                return (
-                  <div key={index}>
-                    <i className="fa fa-circle"/>
-                    { award.title }
-                  </div>
-                )
+                return <Award key={index} name={award.title}/>
               })}
             </div>
           </div>
-
           <ProfileFooter
             cvFilePath={user.resume.path}
             cvFileName={user.resume.fileName}
-            socialMedia={user.socialMedia} />
+            socialMedia={user.socialMedia}
+          />
         </div>
         <div className="main-info column">
           <MainProfile />
