@@ -7,13 +7,19 @@ export function Home() {
   const {
     user: { firstName, lastName, photo, title },
     loaded,
+    setLoaded,
   } = useProfile()
+
   const navigate = useNavigate()
 
   const handleProfileClick = (): void => {
     if (loaded) {
       navigate('/profile')
     }
+  }
+
+  const loadingCompleted = (): void => {
+    setLoaded(true)
   }
 
   return (
@@ -26,7 +32,12 @@ export function Home() {
         title={title}
         onProfileClick={handleProfileClick}
       />
-      { !loaded && <Loading label={'loading...'} redirection={'/profile'} /> }
+      { !loaded &&
+      <Loading
+        increment={4}
+        completed={loadingCompleted}
+        label={'loading...'}
+        redirection={'/profile'} /> }
     </div>
   )
 }

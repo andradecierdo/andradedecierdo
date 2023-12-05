@@ -1,33 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useProfile } from '../context/ProfileContext'
 
 interface ILoadingComponent {
   label: string
+  increment: number
   redirection: string
+  completed(): void
 }
 
-export function Loading({ label, redirection }: ILoadingComponent ) {
+export function Loading({ label, redirection, increment, completed }: ILoadingComponent ) {
   const [percentage, setPercentage] = useState(5)
-  const { loaded, setLoaded } = useProfile()
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!loaded) {
-      const interval = setInterval(() => {
-        setPercentage((prevPercentage) => (prevPercentage >= 100 ? 4 : prevPercentage + 4));
-      }, 50)
+    const interval = setInterval(() => {
+      setPercentage((prevPercentage) => (prevPercentage >= 100 ? increment : prevPercentage + increment))
+    }, 50)
 
-      return () => clearInterval(interval)
-    }
+    return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
-    if (!loaded && percentage >= 100) {
-      setLoaded(true)
+    if (percentage >= 100) {
+      completed()
       navigate(redirection)
     }
-  }, [percentage, loaded])
+  }, [percentage])
 
   return (
     <div className="loading">
