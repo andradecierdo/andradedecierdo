@@ -1,5 +1,3 @@
-import { ISkill } from './skill'
-
 export interface ICompany {
   id: number
   userId: number
@@ -10,6 +8,6 @@ export interface ICompany {
   website?: string
   email?: string
   phone?: string
-  skills?: ISkill[]
+  skills?: number[]
   responsibilities?: string[]
 }

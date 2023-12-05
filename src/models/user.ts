@@ -1,4 +1,4 @@
-import { IAward, ICertificate, IEducation, IExperience, IReference, IResume, ISkill } from './'
+import { IAward, ICertificate, IEducation, IExperience, IReference, IResume } from './'
 
 export interface IUser {
   id: number
@@ -36,8 +36,8 @@ export interface IUserDetails extends IUser {
   awards: IAward[]
   certificates: ICertificate[]
   references: IReference[]
-  mainSkills: ISkill[]
-  skills: ISkill[]
+  mainSkills: number[]
+  skills: number[]
   education: IEducation[]
   socialMedia: ISocialMedia[]
 }

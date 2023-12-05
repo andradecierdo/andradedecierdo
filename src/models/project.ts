@@ -1,5 +1,4 @@
 import { IPosition } from './position'
-import { ISkill } from './skill'
 
 export interface IProject {
   id: number
@@ -9,7 +8,7 @@ export interface IProject {
   startDate: Date
   endDate: Date
   position: IPosition
-  skills: ISkill[]
+  skills: number[]
   responsibilities: string[]
   website: string
   logo: string

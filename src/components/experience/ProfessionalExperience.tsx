@@ -2,6 +2,7 @@ import React from 'react'
 import { IExperience } from '../../models'
 import { CompanyBanner } from '../company/CompanyBanner'
 import { ProjectBanner } from '../company/ProjectBanner'
+import { useProfile } from '../../context/ProfileContext'
 
 interface IProfessionalExperience {
   experience: IExperience
@@ -9,6 +10,7 @@ interface IProfessionalExperience {
 
 export function ProfessionalExperience({ experience }: IProfessionalExperience) {
   const { company, projects, position, startDate, endDate } = experience
+  const { getSkills } = useProfile()
 
   return (
     <div className="professional-experience">
@@ -20,7 +22,7 @@ export function ProfessionalExperience({ experience }: IProfessionalExperience) 
         startDate={startDate}
         endDate={endDate}
         title={position.name}
-        skills={company.skills?.map(o => o.name)}
+        skills={getSkills(company.skills || []).map(o => o.name)}
         responsibilities={company.responsibilities}
         website={company.website} />
 
@@ -45,7 +47,7 @@ export function ProfessionalExperience({ experience }: IProfessionalExperience) 
                   startDate={startDate}
                   endDate={endDate}
                   responsibilities={responsibilities}
-                  skills={skills.map(o => o.name)}
+                  skills={getSkills(skills).map(o => o.name)}
                   website={website} />
               </div>
             )

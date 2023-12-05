@@ -5,7 +5,6 @@ import {
   IEducation,
   IExperience,
   IProject,
-  ISkill,
   ISocialMedia,
   IUserDetails,
 } from '../models'
@@ -71,83 +70,6 @@ const education: IEducation[] = [
   }
 ]
 
-const mainSkills: ISkill[] = [
-  {
-    id: 1,
-    name: 'React',
-    level: 90,
-  },
-  {
-    id: 2,
-    name: 'Angular',
-    level: 90,
-  },
-  {
-    id: 4,
-    name: 'Node',
-    level: 90,
-  },
-  {
-    id: 5,
-    name: 'Laravel',
-    level: 90,
-  },
-  {
-    id: 6,
-    name: 'GraphQL',
-    level: 80,
-  },
-  {
-    id: 8,
-    name: 'MySQL',
-    level: 80,
-  },
-  {
-    id: 9,
-    name: 'Postgres',
-    level: 80,
-  },
-  {
-    id: 11,
-    name: 'Docker',
-    level: 70,
-  },
-]
-
-const skills: ISkill[] = [
-  {
-    id: 3,
-    name: 'Typescript',
-    level: 90,
-  },
-  {
-    id: 3,
-    name: 'Javascript',
-    level: 90,
-  },
-  {
-    id: 3,
-    name: 'PHP',
-    level: 90,
-  },
-  {
-    id: 10,
-    name: 'MongoDB',
-    level: 90,
-  },
-
-  {
-    id: 12,
-    name: 'Git',
-    level: 80,
-  },
-  {
-    id: 7,
-    name: 'HTML & CSS',
-    level: 90,
-  },
-]
-
 const sprobeCompany: ICompany = {
   id: 1,
   userId: 1,
@@ -162,7 +84,7 @@ const sprobeCompany: ICompany = {
 
 // Sprobe Projects
 const sprobeProjects: IProject[] = [
-  // CM Studio
+  // CM STUDIO
   {
     id: 3,
     companyId: 1,
@@ -175,43 +97,7 @@ const sprobeProjects: IProject[] = [
       name: 'Full Stack Engineer',
       description: '',
     },
-    skills: [
-      {
-        id: 1,
-        name: 'React',
-        level: 90,
-      },
-      {
-        id: 5,
-        name: 'Laravel',
-        level: 90,
-      },
-      {
-        id: 4,
-        name: 'Node',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'PHP',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'Javascript',
-        level: 90,
-      },
-      {
-        id: 8,
-        name: 'MySQL',
-        level: 80,
-      },
-      {
-        id: 11,
-        name: 'Docker',
-        level: 70,
-      },
-    ],
+    skills: [1, 3, 4, 6, 10, 8, 11, 13],
     responsibilities: [
       'Created a user-friendly assistant feature that helps you choose a video template based on purpose and information you provide',
       'Refactored database tables to have better structure and optimized association',
@@ -224,7 +110,7 @@ const sprobeProjects: IProject[] = [
     logo: '/portfolio/company/cmstudio-logo.png',
     address: 'Tokyo, Japan'
   },
-  // Phrontier
+  // PHRONTIER
   {
     id: 3,
     companyId: 1,
@@ -237,43 +123,7 @@ const sprobeProjects: IProject[] = [
       name: 'Full Stack Engineer',
       description: '',
     },
-    skills: [
-      {
-        id: 1,
-        name: 'React',
-        level: 90,
-      },
-      {
-        id: 5,
-        name: 'Laravel',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'PHP',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'Javascript',
-        level: 90,
-      },
-      {
-        id: 8,
-        name: 'MySQL',
-        level: 80,
-      },
-      {
-        id: 11,
-        name: 'Docker',
-        level: 70,
-      },
-      {
-        id: 12,
-        name: 'Git',
-        level: 80,
-      },
-    ],
+    skills: [1, 4, 6, 10, 8, 11, 13],
     responsibilities: [
       'Implemented the core functions that send requests to the API and processes the response in a simpler and user-friendly view for non-tech users',
       'Ensured quality output by thoroughly reviewing codes and testing functionalities',
@@ -285,8 +135,7 @@ const sprobeProjects: IProject[] = [
     logo: '/portfolio/company/default-company-logo.png',
     address: 'Tokyo, Japan'
   },
-
-  // Automatching
+  // AUTOMATCHING
   {
     id: 3,
     companyId: 1,
@@ -299,38 +148,7 @@ const sprobeProjects: IProject[] = [
       name: 'Full Stack Engineer',
       description: '',
     },
-    skills: [
-      {
-        id: 5,
-        name: 'Laravel',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'PHP',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'Javascript',
-        level: 90,
-      },
-      {
-        id: 8,
-        name: 'MySQL',
-        level: 80,
-      },
-      {
-        id: 11,
-        name: 'Docker',
-        level: 70,
-      },
-      {
-        id: 12,
-        name: 'Git',
-        level: 80,
-      },
-    ],
+    skills: [4, 6, 10, 8, 11, 13],
     responsibilities: [
       'Implemented the main automatching algorithm that matches and schedules companies based on their needs and availability with optimization and efficiency',
       'Designed, developed, and managed well-functioning database from scratch',
@@ -360,43 +178,7 @@ const codevProjects: IProject[] = [
       name: 'Full Stack Engineer',
       description: '',
     },
-    skills: [
-      {
-        id: 2,
-        name: 'Angular',
-        level: 90,
-      },
-      {
-        id: 4,
-        name: 'Node',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'Typescript',
-        level: 90,
-      },
-      {
-        id: 6,
-        name: 'GraphQL',
-        level: 80,
-      },
-      {
-        id: 9,
-        name: 'Postgres',
-        level: 80,
-      },
-      {
-        id: 11,
-        name: 'Docker',
-        level: 70,
-      },
-      {
-        id: 12,
-        name: 'Git',
-        level: 80,
-      },
-    ],
+    skills: [2, 3, 5, 7, 8, 9, 13],
     responsibilities: [
       'Developed a feature that calculates the company’s retained earnings and accrual net income based on its accounts and transactions',
       'Implemented a page that generates accounting reports like accrual balance sheet and its supporting schedule',
@@ -421,43 +203,7 @@ const codevProjects: IProject[] = [
       name: 'Full Stack Engineer',
       description: '',
     },
-    skills: [
-      {
-        id: 1,
-        name: 'React',
-        level: 90,
-      },
-      {
-        id: 4,
-        name: 'Node',
-        level: 90,
-      },
-      {
-        id: 3,
-        name: 'Typescript',
-        level: 90,
-      },
-      {
-        id: 6,
-        name: 'GraphQL',
-        level: 80,
-      },
-      {
-        id: 10,
-        name: 'MongoDB',
-        level: 80,
-      },
-      {
-        id: 11,
-        name: 'Docker',
-        level: 70,
-      },
-      {
-        id: 12,
-        name: 'Git',
-        level: 80,
-      },
-    ],
+    skills: [1, 3, 5, 12, 8, 9, 13],
     responsibilities: [
       'Maintained and enhanced the microservice responsible for creating requests to the accessibility APIs and processing the response for better analysis',
       'Introduced process improvements and coding standards to have readable and maintainable codes',
@@ -491,23 +237,7 @@ const snowballEffectCompany: ICompany = {
   website: 'https://www.snowballeffect.co.nz/',
   email: '',
   phone: '',
-  skills: [
-    {
-      id: 5,
-      name: 'Laravel',
-      level: 90,
-    },
-    {
-      id: 3,
-      name: 'PHP',
-      level: 90,
-    },
-    {
-      id: 12,
-      name: 'Git',
-      level: 80,
-    },
-  ],
+  skills: [4, 11, 13],
   responsibilities: [
     'Reported directly to the engineering team',
     'Created a script for automated autoloading of an internal dependency through composer',
@@ -592,8 +322,8 @@ export const myProfile: IUserDetails = {
   education,
   experiences,
   references: [],
-  mainSkills,
-  skills,
+  mainSkills: [1, 2, 3, 4, 5, 6, 7, 8],
+  skills: [9, 10, 11, 12, 13, 14],
   socialMedia,
   overview: 'A full stack engineer with over 7 years of experience with ' +
     'a strong focus on web development in the Software as a ' +

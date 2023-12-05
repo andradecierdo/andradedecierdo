@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { MainProfile } from './MainProfile'
 
 export function Portfolio() {
-  const { user } = useProfile()
+  const { user, getSkills } = useProfile()
   const navigate = useNavigate()
   const handleAvatarClick = (): void => {
     navigate('/')
@@ -40,11 +40,11 @@ export function Portfolio() {
           </div>
           <div className="scroll-component side">
             <div className="skills-container">
-              { user.mainSkills.map((skill, index) => {
+              { getSkills(user.mainSkills).map((skill, index) => {
                 return <Skill key={index} name={skill.name} level={skill.level} />
               })}
               <div className="other-skills">
-                { user.skills.map((skill, index) => {
+                { getSkills(user.skills).map((skill, index) => {
                   return <OtherSkill key={index} name={skill.name} />
                 })}
               </div>
