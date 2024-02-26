@@ -22,6 +22,7 @@ export function Portfolio() {
                 <Avatar photo={user.photo} onProfileClick={() => handleAvatarClick()}/>
               </div>
             </div>
+            <div className="name">{ user.firstName } { user.lastName }</div>
             <hr/>
             <div className="contact">
               <div>

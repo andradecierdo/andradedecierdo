@@ -10,6 +10,7 @@ $color-secondary: #a1a1a1;
   font-size: 16px;
   color: $color-primary;
   height: 100vh;
+  cursor: default;
 
   @include mobile {
     height: 100%;
@@ -66,6 +67,16 @@ $color-secondary: #a1a1a1;
     .top {
       background-color: rgb(33 39 41 / 29%);
       padding: 15px 0;
+
+      .name {
+        text-align: center;
+        display: none;
+        margin-top: 5px;
+
+        @include mobile {
+          display: block;
+        }
+      }
     }
 
     .avatar-container {
@@ -223,7 +234,7 @@ $color-secondary: #a1a1a1;
 
 .bg {
   &.dark {
-    background-color: #282c34;
+    background-color: #1f2229;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
